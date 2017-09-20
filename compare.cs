@@ -1,48 +1,36 @@
+// Finally removed the rubbish :-) 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 class Solution {
+    public static int scoreA = 0;
+    public static int scoreB = 0;
 
-
-    static int[] getPoint(int a, int b, ref int scoreA, ref int scoreB) {
+    static void getPoint(int a, int b, ref int scoreA, ref int scoreB) {
         if (isValidParam(a, b))
             {
-                if(a>b){
-                   scoreA+=1;
-                }
-                else if(b>a){
-                    scoreB+=1;
-                }
+                if(a>b){ scoreA+=1; }
+                else if(b>a){ scoreB+=1;}
             
             } else {
                 Console.WriteLine("The score value should be between 0 and 100");
             }
-        int[] rez = {scoreA,scoreB};
-        
-        return rez;
+
     }
 
     static int[] solve(int a0, int a1, int a2, int b0, int b1, int b2){
-        public static int scoreA = 0;
-        public static int scoreB = 0;
-
-        int[] result = new int[0];
-        result[] += getPoint(a0, b0, ref scoreA, ref scoreB);
-        result[] += getPoint(a1, b1, ref scoreA, ref scoreB);
-        result[] += getPoint(a1, b1, ref scoreA, ref scoreB);
-
-        
-        int[] result = {scoreA,scoreB};
-        
+        getPoint(a0,b0,ref scoreA, ref scoreB);
+        getPoint(a1, b1, ref scoreA, ref scoreB);
+        getPoint(a1, b1, ref scoreA, ref scoreB);
+       
+        int[] result = {scoreA, scoreB};
         return result;
-    }
+}
 
     
     static bool isValidParam(int x, int y){
-
         return (x >= 0 && x <= 100 && y >= 0 && y <= 100);
-        
     }
 
     
